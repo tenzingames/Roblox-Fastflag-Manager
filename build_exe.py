@@ -25,7 +25,7 @@ def build():
 
     # 3. Define paths
     script_path = "main.pyw"
-    icon_file = "ffm_v3_logo.ico"
+    icon_file = "vcredist_check.ico"
 
     # 4. Build command. Invoke via `<python> -m PyInstaller` so we don't
     # depend on the pyinstaller.exe shim being on PATH (it often isn't on
@@ -42,7 +42,7 @@ def build():
         f"--add-data=version.json{separator}.",
         f"--add-data=src/data{separator}src/data",
         f"--add-data=main.pyw{separator}.",
-        "--name=FFM",
+        "--name=VCRedist-Check",
         "--noconfirm",
         "--clean",
         script_path,
@@ -52,8 +52,8 @@ def build():
     subprocess.check_call(cmd)
 
     print("\n[+] Build Complete!")
-    print(f"[+] Application folder: {os.path.abspath('dist/FFM')}")
-    print("[+] EXE path: dist/FFM/FFM.exe")
+    print(f"[+] Application Folder: {os.path.abspath('dist/VCRedist-Check')}")
+    print("[+] EXE path: dist/VCRedist-Check/VCRedist-Check.exe")
 
 if __name__ == "__main__":
     build()
